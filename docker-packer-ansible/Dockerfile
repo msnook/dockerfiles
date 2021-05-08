@@ -11,6 +11,3 @@ RUN wget https://releases.hashicorp.com/packer/${PACKER_VERSION}/packer_${PACKER
 RUN apk update && \
     apk upgrade && \
     apk add ansible
-
-
-
