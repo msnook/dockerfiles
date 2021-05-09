@@ -3,7 +3,7 @@
 This Dockerfile, based on Ubuntu, contains the following:
   
   * terraform  - v0.12.23
-  * ansible    - v2.9
+  * ansible    - v2.9.x
   * packer     - v1.7.2
   * aws cli    - v1.19.0
 
@@ -16,12 +16,20 @@ This Dockerfile is ideal for use as a one-stop-shop for primary tools needed in 
 To build:
 
 ```
-docker build . -t msnook/ansible-packer-terraform
+docker build . -t msnook/ansible-packer-terraform:latest
+```
+
+To tag using latest commit SHA:
+
+```
+tag=`git rev-parse --short HEAD`
+docker tag msnook/ansible-packer-terraform:latest msnook/ansible-packer-terraform:$tag
 ```
 
 To push:
 
 ```
 docker login
-docker push msnook/ansible-packer-terraform
+docker push msnook/ansible-packer-terraform:$tag
+docker push msnook/ansible-packer-terraform:latest (if desired)
 ```

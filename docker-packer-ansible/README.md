@@ -15,12 +15,20 @@ A potential use case for this Dockerfile might be leveraging Packer's [Docker bu
 To build:
 
 ```
-docker build . -t msnook/docker-packer-ansible
+docker build . -t msnook/docker-packer-ansible:latest
+```
+
+To tag using latest commit SHA:
+
+```
+tag=`git rev-parse --short HEAD`
+docker tag msnook/docker-packer-ansible:latest msnook/docker-packer-ansible:$tag
 ```
 
 To push:
 
 ```
 docker login
-docker push msnook/docker-packer-ansible
+docker push msnook/docker-packer-ansible:$tag
+docker push msnook/docker-packer-ansible:latest (if desired)
 ```
