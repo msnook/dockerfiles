@@ -3,7 +3,7 @@
 This Dockerfile, based on Alpine Linux, contains the following:
   
   * docker  - v20.10.6
-  * ansible - (latest from Alpine Linux)
+  * ansible - v2.9.21
   * packer  - v1.7.2
 
 ## Use Case
