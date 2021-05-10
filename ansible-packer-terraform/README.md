@@ -2,7 +2,7 @@
 
 This Dockerfile, based on Ubuntu, contains the following:
   
-  * terraform  - v0.12.23
+  * terraform  - v0.12.31
   * ansible    - v2.9.x
   * packer     - v1.7.2
   * aws cli    - v1.19.0
